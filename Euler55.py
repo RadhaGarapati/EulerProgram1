@@ -1,5 +1,8 @@
 import time
+
 start = time.time()
+
+
 def is_lychrel(n):
     for i in range(50):
         number = n + int(str(n)[::-1])
@@ -7,12 +10,14 @@ def is_lychrel(n):
             return False
         n = number
     return True
+
+
 counter = 0
 for i in range(10001):
     if is_lychrel(i):
         counter += 1
 
-print (counter)
+print(counter)
 
 end = time.time()
-print (end - start)
+print(end - start)

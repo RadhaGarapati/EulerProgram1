@@ -1,5 +1,3 @@
-
-
 import fractions
 
 
@@ -17,14 +15,11 @@ def compute():
                 numer *= n
                 denom *= d
                 print(numer)
-                print(denom)                
-                
+                print(denom)
+
     return str(denom // fractions.gcd(numer, denom))
 
 
-
 if __name__ == "__main__":
-    
+
     print(compute())
-    
-    

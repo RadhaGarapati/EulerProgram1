@@ -1,4 +1,6 @@
 import math
+
+
 def is_pentagonal_number(num):
     n = (0.5 + math.sqrt(0.25 - 6.0 * (-num))) / 3.0
     return n == int(n)
@@ -15,7 +17,7 @@ def project_euler_44():
         if current_number_1 - last_number_1 > best_distance:
             break
 
-        #continue_to_outer_loop = False
+        # continue_to_outer_loop = False
 
         n2 = n1 - 1
 
@@ -23,10 +25,12 @@ def project_euler_44():
             current_number_2 = n2 * (3 * n2 - 1) // 2
 
             if current_number_1 - current_number_2 > best_distance:
-               # continue_to_outer_loop = True
+                # continue_to_outer_loop = True
                 break
 
-            if is_pentagonal_number(current_number_1 + current_number_2) and is_pentagonal_number(current_number_1 - current_number_2):
+            if is_pentagonal_number(
+                current_number_1 + current_number_2
+            ) and is_pentagonal_number(current_number_1 - current_number_2):
                 tmp_distance = current_number_1 - current_number_2
 
                 if best_distance > tmp_distance:
@@ -42,5 +46,6 @@ def project_euler_44():
         last_number_1 = current_number_1
 
     return best_distance
+
 
 print(project_euler_44())

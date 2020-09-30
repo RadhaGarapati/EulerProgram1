@@ -1,12 +1,14 @@
 import time
+
 start = time.time()
 
 
 def is_prime(n):
-    for i in range(3, int(n**0.5)+1, 2):
+    for i in range(3, int(n ** 0.5) + 1, 2):
         if n % i == 0:
             return False
     return True
+
 
 i = 0
 gap = 1
@@ -17,14 +19,13 @@ all_numbers = [1]
 while ratio > 0.1:
     for j in range(4):
         i += gap
-        present_number = 2*i + 1
+        present_number = 2 * i + 1
         all_numbers.append(present_number)
         if is_prime(present_number):
-            primes.append(2*i + 1)
-    ratio = float(len(primes))/len(all_numbers)
+            primes.append(2 * i + 1)
+    ratio = float(len(primes)) / len(all_numbers)
     gap += 1
 
-print (int((2*i+1)**0.5))
+print(int((2 * i + 1) ** 0.5))
 end = time.time()
-print (end - start)
-
+print(end - start)

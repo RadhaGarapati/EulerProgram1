@@ -1,4 +1,3 @@
-
 def sieve(n):
     """generates primes up to n."""
     s = [True] * (n + 1)
@@ -29,7 +28,9 @@ def get_permutations(n):
         for prime2 in primes:
             if is_permutation(prime1, prime2):
                 for prime3 in primes:
-                    if is_permutation(prime3, prime1) and is_permutation(prime3, prime2):
+                    if is_permutation(prime3, prime1) and is_permutation(
+                        prime3, prime2
+                    ):
                         yield prime1, prime2, prime3
 
 
@@ -42,9 +43,6 @@ def check_subtraction(n):
             return x, y, z
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     x, y, z = sorted(check_subtraction(10000))
     print(str(x) + str(y) + str(z))
-
-
-
